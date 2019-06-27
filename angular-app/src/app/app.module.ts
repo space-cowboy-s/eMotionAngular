@@ -16,6 +16,7 @@ import { CarsdispoComponent } from './component/carsdispo/carsdispo.component';
 import { InfouserComponent } from './component/infouser/infouser.component';
 import { ProfiluserComponent } from './component/profiluser/profiluser.component';
 import { ContratComponent } from './component/contrat/contrat.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ContratComponent } from './component/contrat/contrat.component';
     CarsdispoComponent,
     InfouserComponent,
     ProfiluserComponent,
-    ContratComponent
+    ContratComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
