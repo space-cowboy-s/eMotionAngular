@@ -1,1 +1,27 @@
-<p>contact works!</p>
+<div class="container">
+  <h3>Contact</h3>
+  <div class="row">
+    <div class="col-md-6" style="border-right: 1px solid #dbdbdb">
+      <h4>Paris</h4>
+      <agm-map [latitude]="latParis" [longitude]="lngParis">
+        <agm-marker [latitude]="latParis" [longitude]="lngParis"></agm-marker>
+      </agm-map>
+      <h5>Adresse : </h5>
+      <p>4 place du Louvre, 75001 Paris</p>
+      <h5>Téléphone : </h5>
+      <p>01 44 50 75 01</p>
+      <p>Contact : <a class="mailto" href="mailto:eMotion-Paris@outlook.com">eMotion-Paris@outlook.com</a></p>
+    </div>
+    <div class="col-md-6">
+      <h4>Lyon</h4>
+      <agm-map [latitude]="latLyon" [longitude]="lngLyon">
+        <agm-marker [latitude]="latLyon" [longitude]="lngLyon"></agm-marker>
+      </agm-map>
+      <h5>Adresse : </h5>
+      <p>2 Place Sathonay, 69001 Lyon</p>
+      <h5>Téléphone : </h5>
+      <p>04 72 98 54 04</p>
+      <p>Contact : <a class="mailto" href="mailto:eMotion-Lyon@outlook.com">eMotion-Lyon@outlook.com</a></p>
+    </div>
+  </div>
+</div>
