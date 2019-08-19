@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AddcarComponent } from './component/addcar/addcar.component';
+import { AdmincarsComponent } from './component/admincars/admincars.component';
 import { CarsdispoComponent } from './component/carsdispo/carsdispo.component';
 import { ConditionComponent } from './component/condition/condition.component';
 import { ContratComponent } from './component/contrat/contrat.component';
@@ -16,13 +17,16 @@ import { ContactComponent } from './component/contact/contact.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { LegalComponent } from './component/legal/legal.component';
 import { RgpdComponent } from './component/rgpd/rgpd.component';
+import {EditcarsComponent} from './component/editcars/editcars.component';
 
 const routes: Routes = [
   {path: '' , component: HomepageComponent},
   {path: 'addcar', component: AddcarComponent},
+  {path: 'admincars', component: AdmincarsComponent},
   {path: 'carsdispo', component: CarsdispoComponent},
   {path: 'condition', component: ConditionComponent},
   {path: 'contrat', component: ContratComponent},
+  {path: 'editcars', component: EditcarsComponent},
   {path: 'facture', component: FactureComponent},
   {path: 'historic', component: HistoricComponent},
   {path: 'infouser', component: InfouserComponent},

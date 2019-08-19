@@ -1,0 +1,28 @@
+<div class="container">
+    <form (ngSubmit)="startAdd()" [formGroup]="AddCars">
+        <div class="form-group">
+        <label>Champ</label>
+        <!--se réfèrer au .component.ts pour les formControlName
+         et le ngSubmit / formGroup  -->
+        <input formControlName="input1" type="text" class="form-control" id="" aria-describedby="" placeholder="">
+        </div>
+        <div class="form-group">
+        <label for="">Champ</label>
+        <input formControlName="input2" type="text" class="form-control" id="" placeholder="">
+        </div>
+        <div class="form-group">
+        <label for="">Champ</label>
+        <input formControlName="input3" type="text" class="form-control" id="" placeholder="">
+        </div>
+        <div class="form-group">
+        <label for="">Champ</label>
+        <input formControlName="input4" type="text" class="form-control" id="" placeholder="">
+        </div> 
+        <div class="form-group">
+        <label for="">Champ</label>
+        <input formControlName="input5" type="text" class="form-control" id="" placeholder="">
+        </div>    
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    

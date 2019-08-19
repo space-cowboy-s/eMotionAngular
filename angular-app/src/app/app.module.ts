@@ -25,6 +25,8 @@ import { SignupComponent } from './component/signup/signup.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { SearchformComponent } from './component/listcars/searchform/searchform.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {AdmincarsComponent} from "./component/admincars/admincars.component";
+import {EditcarsComponent} from "./component/editcars/editcars.component";
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ RgpdComponent,
 SignupComponent,
 ContactComponent,
 SearchformComponent,
+AdmincarsComponent,
+EditcarsComponent
   ],
   imports: [
     BrowserModule,
