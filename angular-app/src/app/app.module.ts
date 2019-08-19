@@ -19,7 +19,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import {ReactiveFormsModule } from '@angular/forms';
 import { LegalComponent } from './component/legal/legal.component';
 import { RgpdComponent } from './component/rgpd/rgpd.component';
-import { SignupComponent } from './signup/signup.component'
+import { SignupComponent } from './component/signup/signup.component';
+import { ContactComponent } from './component/contact/contact.component'
 
 
 @NgModule({
@@ -42,6 +43,7 @@ ContratComponent,
 LegalComponent,
 RgpdComponent,
 SignupComponent,
+ContactComponent,
 
   ],
   imports: [
