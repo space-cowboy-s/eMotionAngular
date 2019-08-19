@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-addcar',
-  templateUrl: './addcar.component.html',
-  styleUrls: ['./addcar.component.css']
+  selector: 'app-searchcar',
+  templateUrl: './searchcar.component.html',
+  styleUrls: ['./searchcar.component.css']
 })
-export class AddcarComponent implements OnInit {
+export class SearchcarComponent implements OnInit {
   searchForm: FormGroup;
   constructor( fb: FormBuilder ) {
     this.searchForm = fb.group({

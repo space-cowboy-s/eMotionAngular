@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -17,28 +16,36 @@ import { InfouserComponent } from './component/infouser/infouser.component';
 import { ProfiluserComponent } from './component/profiluser/profiluser.component';
 import { ContratComponent } from './component/contrat/contrat.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import {ReactiveFormsModule } from '@angular/forms';
+import { LegalComponent } from './component/legal/legal.component';
+import { RgpdComponent } from './component/rgpd/rgpd.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    AddcarComponent,
-    ConditionComponent,
-    ListuserComponent,
-    ListcarsComponent,
-    ListcommandComponent,
-    FactureComponent,
-    HistoricComponent,
-    CarsdispoComponent,
-    InfouserComponent,
-    ProfiluserComponent,
-    ContratComponent,
-    HomepageComponent
+HomepageComponent,
+NavbarComponent,
+FooterComponent,
+AddcarComponent,
+ConditionComponent,
+ListcarsComponent,
+ListuserComponent,
+ListcommandComponent,
+FactureComponent,
+HistoricComponent,
+CarsdispoComponent,
+InfouserComponent,
+ProfiluserComponent,
+ContratComponent,
+LegalComponent,
+RgpdComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
