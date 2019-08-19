@@ -21,6 +21,7 @@ import { LegalComponent } from './component/legal/legal.component';
 import { RgpdComponent } from './component/rgpd/rgpd.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { ContactComponent } from './component/contact/contact.component'
+import {SearchformComponent} from "./component/listcars/searchform/searchform.component";
 
 
 @NgModule({
@@ -44,7 +45,7 @@ LegalComponent,
 RgpdComponent,
 SignupComponent,
 ContactComponent,
-
+SearchformComponent,
   ],
   imports: [
     BrowserModule,
