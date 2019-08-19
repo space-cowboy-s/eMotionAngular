@@ -18,7 +18,8 @@ import { ContratComponent } from './component/contrat/contrat.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import {ReactiveFormsModule } from '@angular/forms';
 import { LegalComponent } from './component/legal/legal.component';
-import { RgpdComponent } from './component/rgpd/rgpd.component'
+import { RgpdComponent } from './component/rgpd/rgpd.component';
+import { SignupComponent } from './signup/signup.component'
 
 
 @NgModule({
@@ -40,6 +41,7 @@ ProfiluserComponent,
 ContratComponent,
 LegalComponent,
 RgpdComponent,
+SignupComponent,
 
   ],
   imports: [
