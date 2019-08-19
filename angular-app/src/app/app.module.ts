@@ -24,6 +24,7 @@ import { RgpdComponent } from './component/rgpd/rgpd.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { SearchformComponent } from './component/listcars/searchform/searchform.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ SearchformComponent,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    NgbModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB1Gm_mp_klsKz1nXfseOQIN0uioMoAKlA'
     }),

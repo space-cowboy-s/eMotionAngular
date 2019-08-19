@@ -17,6 +17,6 @@ export class SignupComponent implements OnInit {
     console.log('Tentative de connexion');
 
     localStorage.setItem('user', JSON.stringify({login : this.model.username}));
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 }

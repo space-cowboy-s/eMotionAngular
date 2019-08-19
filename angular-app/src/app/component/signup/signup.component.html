@@ -1,7 +1,6 @@
 <div class="container">
   <div class="col-md-6 col-md-offset-3">
-    <h2>Page de connexion</h2>
-    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate id="form_signin">
       <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
         <label for="username">Identifiant</label>
         <input type="text" class="form-control" name="username" id="username" [(ngModel)]="model.username" #username="ngModel" placeholder='Saisissez votre identifiant' required />
@@ -11,8 +10,12 @@
         <input type="password" class="form-control" name="password" id="password" [(ngModel)]="model.password" #password="ngModel" placeholder='Saisissez votre mot de passe' required />
       </div>
       <div class="form-group">
+        <button class="btn btn-primary pull-left" onclick="document.getElementById('form_signin').style.display = 'none';document.getElementById('form_signup').style.display = 'block'">Je crée un compte</button>
         <button class="btn btn-primary pull-right" [disabled]="!f.form.valid">Connexion</button>
       </div>
+    </form>
+    <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate id="form_signup" style="display:none">
+      <button class="btn btn-primary pull-left" onclick="document.getElementById('form_signin').style.display = 'block';document.getElementById('form_signup').style.display = 'none'">J'ai déjà un compte</button>
     </form>
   </div>
 </div>
