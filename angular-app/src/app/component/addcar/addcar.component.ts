@@ -7,9 +7,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./addcar.component.css']
 })
 export class AddcarComponent implements OnInit {
-  searchForm: FormGroup;
+  AddCars: FormGroup;
   constructor( fb: FormBuilder ) {
-    this.searchForm = fb.group({
+    this.AddCars = fb.group({
       input1: '', // la chaîne de caractères est la valeur par défaut du champ
       input2: '',
       input3: '',
@@ -17,8 +17,8 @@ export class AddcarComponent implements OnInit {
       input5: '',
       });
    }
-   startSearch(){
-    console.log("recherche lancée");
+   StartAdd(){
+    console.log("voiture ajoutée");
     }
   ngOnInit() {
   }

@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import { CarsdispoComponent } from './carsdispo.component';
+import { SearchformComponent } from './searchform/searchform.component';
 
 @NgModule({
   declarations: [
-    CarsdispoComponent
+    CarsdispoComponent,
+    SearchformComponent
   ],
   imports: [
     CommonModule,
@@ -14,6 +16,10 @@ ReactiveFormsModule,
   ],
   providers: [
     FormBuilder
+    ],
+    exports:[
+      SearchformComponent
     ]
 })
+
 export class CarsdispoModule { }

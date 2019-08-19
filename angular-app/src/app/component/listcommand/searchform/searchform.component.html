@@ -1,0 +1,9 @@
+<div class="container">
+    <form (ngSubmit)="startSearch()" [formGroup]="searchForm" class="form-inline well well-sm" >
+    <div class="form-group col-md-5">
+    <label>Veuillez entrer un titre de film</label>
+    <input formControlName="title" ngModel pattern="[a-zA-Z ]*" type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Rechercher</button>
+    </form>
+    </div>
