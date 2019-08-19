@@ -3,17 +3,6 @@
 		<div class="footer1">
 			<div class="container">
 				<div class="row">
-					
-					<div class="col-md-3 widget">
-						<h3 class="widget-title">Contact</h3>
-						<div class="widget-body">
-							<p>+234 23 9873237<br>
-								<a href="mailto:#">some.email@somewhere.com</a><br>
-								<br>
-								234 Hidden Pond Road, Ashland City, TN 37015
-							</p>	
-						</div>
-					</div>
 
 					<div class="col-md-3 widget">
 						<h3 class="widget-title">Follow me</h3>
@@ -23,11 +12,11 @@
 								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
 								<a href=""><i class="fa fa-github fa-2"></i></a>
 								<a href=""><i class="fa fa-facebook fa-2"></i></a>
-							</p>	
+							</p>
 						</div>
 					</div>
 
-					<div class="col-md-6 widget">
+					<div class="col-md-7 col-md-offset-2 widget">
 						<h3 class="widget-title">Text widget</h3>
 						<div class="widget-body">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
@@ -42,27 +31,18 @@
 		<div class="footer2">
 			<div class="container">
 				<div class="row">
-					
+
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
-								<a href="#">Home</a> | 
-								<a href="about.html">About</a> |
-								<a href="sidebar-right.html">Sidebar</a> |
-								<a href="contact.html">Contact</a> |
-								<b><a href="signup.html">Sign up</a></b>
+								<a [routerLink]="['/']">Home</a> |
+								<a [routerLink]="['/contact']">Contact</a> |
+                <a [routerLink]="['/legal']">Mentions légales</a> |
+                <a [routerLink]="['/rgpd']">Données personnelles</a> |
+                <a [routerLink]="['/condition']">CGL</a>
 							</p>
 						</div>
 					</div>
-
-					<div class="col-md-6 widget">
-						<div class="widget-body">
-							<p class="text-right">
-								Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a> 
-							</p>
-						</div>
-					</div>
-
 				</div> <!-- /row of widgets -->
 			</div>
 		</div>

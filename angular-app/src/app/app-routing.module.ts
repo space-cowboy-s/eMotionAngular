@@ -12,6 +12,10 @@ import {ListcarsComponent} from './component/listcars/listcars.component';
 import {ListcommandComponent} from './component/listcommand/listcommand.component';
 import {ListuserComponent} from './component/listuser/listuser.component';
 import {ProfiluserComponent} from './component/profiluser/profiluser.component';
+import {ContactComponent} from './component/contact/contact.component';
+import {SignupComponent} from "./component/signup/signup.component";
+import {LegalComponent} from "./component/legal/legal.component";
+import {RgpdComponent} from "./component/rgpd/rgpd.component";
 
 const routes: Routes = [
   {path: '' , component: HomepageComponent},
@@ -25,7 +29,11 @@ const routes: Routes = [
   {path: 'listcars', component: ListcarsComponent},
   {path: 'listcommand', component: ListcommandComponent},
   {path: 'listuser', component: ListuserComponent},
-  {path: 'profiluser', component: ProfiluserComponent}
+  {path: 'profiluser', component: ProfiluserComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'signup', component: SignupComponent},
+  {path: 'legal', component: LegalComponent},
+  {path: 'rgpd', component: RgpdComponent}
 ];
 
 @NgModule({
