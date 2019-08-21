@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AgmCoreModule } from '@agm/core';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -23,10 +22,12 @@ import { LegalComponent } from './component/legal/legal.component';
 import { RgpdComponent } from './component/rgpd/rgpd.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { ContactComponent } from './component/contact/contact.component';
-import { SearchformComponent } from './component/listcars/searchform/searchform.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {AdmincarsComponent} from "./component/admincars/admincars.component";
-import {EditcarsComponent} from "./component/editcars/editcars.component";
+import {AdmincarsComponent} from './component/admincars/admincars.component';
+import {EditcarsComponent} from './component/editcars/editcars.component';
+import { SigninComponent } from './component/signin/signin.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ListcarsPipe} from './component/listcars/listcars.pipe';
 
 @NgModule({
   declarations: [
@@ -49,15 +50,17 @@ LegalComponent,
 RgpdComponent,
 SignupComponent,
 ContactComponent,
-SearchformComponent,
 AdmincarsComponent,
-EditcarsComponent
+EditcarsComponent,
+SigninComponent,
+    ListcarsPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     NgbModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB1Gm_mp_klsKz1nXfseOQIN0uioMoAKlA'
     }),

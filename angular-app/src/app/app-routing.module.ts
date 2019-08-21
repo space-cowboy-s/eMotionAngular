@@ -17,7 +17,8 @@ import { ContactComponent } from './component/contact/contact.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { LegalComponent } from './component/legal/legal.component';
 import { RgpdComponent } from './component/rgpd/rgpd.component';
-import {EditcarsComponent} from './component/editcars/editcars.component';
+import { EditcarsComponent } from './component/editcars/editcars.component';
+import {SigninComponent} from "./component/signin/signin.component";
 
 const routes: Routes = [
   {path: '' , component: HomepageComponent},
@@ -25,7 +26,7 @@ const routes: Routes = [
   {path: 'admincars', component: AdmincarsComponent},
   {path: 'carsdispo', component: CarsdispoComponent},
   {path: 'condition', component: ConditionComponent},
-  {path: 'contrat', component: ContratComponent},
+  {path: 'contrat/:id', component: ContratComponent},
   {path: 'editcars', component: EditcarsComponent},
   {path: 'facture', component: FactureComponent},
   {path: 'historic', component: HistoricComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'profiluser', component: ProfiluserComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'signup', component: SignupComponent},
+  {path: 'signin', component: SigninComponent},
   {path: 'legal', component: LegalComponent},
   {path: 'rgpd', component: RgpdComponent}
 ];

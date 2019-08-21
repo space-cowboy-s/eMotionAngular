@@ -1,21 +1,48 @@
 <div class="container">
   <div class="col-md-6 col-md-offset-3">
+    <hr>
     <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate id="form_signin">
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-        <label for="username">Identifiant</label>
-        <input type="text" class="form-control" name="username" id="username" [(ngModel)]="model.username" #username="ngModel" placeholder='Saisissez votre identifiant' required />
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+        <label for="email">Identifiant</label>
+        <input type="mail" class="form-control" name="email" id="email" [(ngModel)]="model.email" #email="ngModel" placeholder='Saisissez votre adresse mail' required />
       </div>
       <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
         <label for="password">Mot de passe</label>
         <input type="password" class="form-control" name="password" id="password" [(ngModel)]="model.password" #password="ngModel" placeholder='Saisissez votre mot de passe' required />
       </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !passwordValid.valid}">
+        <label for="passwordValid">Vérification du mot de passe</label>
+        <input type="password" class="form-control" name="passwordValid" id="passwordValid" [(ngModel)]="model.passwordValid" #passwordValid="ngModel" placeholder="Saisissez à nouveau votre mot de passe" required />
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastname.valid}">
+        <label for="lastname">Nom</label>
+        <input type="text" class="form-control" name="lastname" id="lastname" [(ngModel)]="model.lastname" #lastname="ngModel" placeholder="Nom" required />
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !firstname.valid}">
+        <label for="firstname">Prénom</label>
+        <input type="text" class="form-control" name="firstname" id="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" placeholder="Prénom" required />
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !birthdate.valid}">
+        <label for="birthdate">Date de naissance</label>
+        <input type="date" class="form-control datepicker" name="birthdate" id="birthdate" [(ngModel)]="model.birthdate" #birthdate="ngModel" required />
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !Country.valid}">
+        <label for="Country">Pays</label>
+        <input type="text" class="form-control" name="Country" id="Country" [(ngModel)]="model.Country" #Country="ngModel" placeholder="Pays"/>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': f.submitted && !phone.valid}">
+        <label for="phone">Téléphone</label>
+        <input type="text" class="form-control" name="phone" id="phone" [(ngModel)]="model.phone" #phone="ngModel" placeholder="Téléphone"/>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': f.submitted && !driverLicence.valid}">
+        <label for="driverLicence">Numéro de permis de conduire</label>
+        <input type="text" class="form-control" name="driverLicence" id="driverLicence" [(ngModel)]="model.driverLicence" #driverLicence="ngModel" placeholder="Numéro de permis de conduire"/>
+      </div>
       <div class="form-group">
-        <button class="btn btn-primary pull-left" onclick="document.getElementById('form_signin').style.display = 'none';document.getElementById('form_signup').style.display = 'block'">Je crée un compte</button>
+        <a class="btn" [routerLink]="['/signin']">J'ai déjà un compte</a>
         <button class="btn btn-primary pull-right" [disabled]="!f.form.valid">Connexion</button>
       </div>
     </form>
-    <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate id="form_signup" style="display:none">
-      <button class="btn btn-primary pull-left" onclick="document.getElementById('form_signin').style.display = 'block';document.getElementById('form_signup').style.display = 'none'">J'ai déjà un compte</button>
-    </form>
+    <hr>
   </div>
 </div>

@@ -1,31 +1,19 @@
-<app-searchform></app-searchform>
-<table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="form-group"><input type="text" class="form-control" placeholder="Brand" style="width: 100px" [(ngModel)]="searchBrand"/></div>
+  <div *ngFor="let car of cars | carFilter:searchBrand">
+    <hr class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
+        <strong>{{car.brand}} {{car.model}}</strong>
+        <p>{{car.color}}</p>
+        <p><i class="fa fa-tachometer"></i> Kilométrage : {{car.numberKilometers}} km</p>
+        <p>Date d'achat : {{car.purchaseDate}}</p>
+        <p>Prix : {{car.bail}} € / jour</p>
+      </div>
+      <div class="col-md-4">
+        <img src="/assets/car_default.jpg"/>
+        <a class="btn" [routerLink]="['/contrat/', car.id]">Réserver</a>
+      </div>
+    </div>
+  </div>
+</div>
