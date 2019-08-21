@@ -10,6 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class ListcarsComponent implements OnInit {
   private cars;
   private searchBrand: string;
+  private searchModel: string;
+  private searchColor: string;
   constructor( private http: HttpClient) { }
 
   ngOnInit() {
