@@ -20,7 +20,9 @@ import { RgpdComponent } from './component/rgpd/rgpd.component';
 import { EditcarsComponent } from './component/editcars/editcars.component';
 import {SigninComponent} from './component/signin/signin.component';
 import {EdituserComponent} from './component/edituser/edituser.component';
-import {AdmincommandeComponent} from "./component/admincommande/admincommande.component";
+import {AdmincommandeComponent} from './component/admincommande/admincommande.component';
+import {LogoutComponent} from './component/logout/logout.component';
+import {ValidsignupComponent} from './component/validsignup/validsignup.component';
 
 const routes: Routes = [
   {path: '' , component: HomepageComponent},
@@ -43,7 +45,9 @@ const routes: Routes = [
   {path: 'legal', component: LegalComponent},
   {path: 'rgpd', component: RgpdComponent},
   {path: 'edituser/:id', component: EdituserComponent},
-  {path: 'admincommande', component: AdmincommandeComponent}
+  {path: 'admincommande', component: AdmincommandeComponent},
+  {path: 'logout', component: LogoutComponent},
+  {path: 'valid', component: ValidsignupComponent}
 ];
 
 @NgModule({

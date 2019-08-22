@@ -34,6 +34,8 @@ import { AdmincarComponent } from './component/admincar/admincar.component';
 import { AdmincarPipe } from './component/admincar/admincar.pipe';
 import {EdituserComponent} from "./component/edituser/edituser.component";
 import { AdmincommandeComponent } from './component/admincommande/admincommande.component';
+import { ValidsignupComponent } from './component/validsignup/validsignup.component';
+import { LogoutComponent } from './component/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { AdmincommandeComponent } from './component/admincommande/admincommande.
     AdmincarComponent,
     AdmincarPipe,
     EdituserComponent,
-    AdmincommandeComponent
+    AdmincommandeComponent,
+    ValidsignupComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
