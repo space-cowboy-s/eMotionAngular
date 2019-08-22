@@ -12,11 +12,12 @@ export class ListcarsComponent implements OnInit {
   private searchBrand: string;
   private searchModel: string;
   private searchColor: string;
+  private searchTypeVehicule: string;
+  private searchLocalisation: string;
   constructor( private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get(`http://api.atcreative.fr/api/cars`).subscribe((res: Response) => this.cars = res);
-    console.log(this.http.get(`http://api.atcreative.fr/api/cars`).subscribe((res: Response) => console.log(this.cars = res)));
+    this.http.get(`http://api.atcreative.fr/api/cars`).subscribe((res: Response) => console.log(this.cars = res));
   }
 
 }

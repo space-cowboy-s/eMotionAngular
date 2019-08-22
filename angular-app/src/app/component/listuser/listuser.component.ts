@@ -13,6 +13,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ListuserComponent implements OnInit {
   private users;
   private searchFirstname: string;
+  private searchLastname: string;
   private searchEmail: string;
   private searchApikey: string;
 

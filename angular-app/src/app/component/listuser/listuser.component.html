@@ -2,6 +2,7 @@
   <hr class="col-md-8 col-md-offset-2">
   <div class="col-md-offset-2 col-md-8">
     <input type="text"  placeholder="Prénom" style="width: 100px" [(ngModel)]="searchFirstname"/>
+    <input type="text"  placeholder="Nom" style="width: 100px" [(ngModel)]="searchLastname"/>
     <input type="text"  placeholder="Email" style="width: 100px" [(ngModel)]="searchEmail"/>
   </div>
   <table class="table">
@@ -12,7 +13,7 @@
       <td>Adresse</td>
       <td>Pays</td>
     </thead>
-    <tbody *ngFor="let user of users | userFilter:searchFirstname:searchEmail:searchApikey">
+    <tbody *ngFor="let user of users | userFilter:searchFirstname:searchLastname:searchEmail:searchApikey">
       <tr *ngIf="user.roles == 'ROLE_USER'">
         <td><strong>{{user.firstname}} {{user.lastname}}</strong></td>
         <td>{{user.email}}</td>
