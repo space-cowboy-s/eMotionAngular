@@ -21,5 +21,11 @@ export class ListuserComponent implements OnInit {
   ngOnInit() {
     this.httpClient.get(`http://api.atcreative.fr/api/admin/users`, {headers}).subscribe((res: Response) => console.log(this.users = res));
   }
-
+  deleteUser(id) {
+    this.httpClient.delete(`http://api.atcreative.fr/api/admin/users/profile/remove/${id}`, { headers}).subscribe((res: Response) => {
+      console.log(res);
+      // tslint:disable-next-line:no-shadowed-variable
+      this.httpClient.get(`http://api.atcreative.fr/api/admin/users`, { headers}).subscribe((res: Response) => console.log(this.users = res));
+    });
+  }
 }

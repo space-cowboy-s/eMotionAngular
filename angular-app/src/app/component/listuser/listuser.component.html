@@ -20,6 +20,7 @@
         <td>{{user.adress}}</td>
         <td>{{user.country}}</td>
         <td><a [routerLink]="['/edituser', user.id]"><i class="fa fa-pencil"></i></a></td>
+        <td><i class="fa fa-trash-o" (click)="deleteUser(user.id)"></i></td>
       </tr>
     </tbody>
   </table>

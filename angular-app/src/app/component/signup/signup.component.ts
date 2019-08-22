@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-signup',
@@ -8,10 +10,27 @@ import { Router, NavigationEnd} from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   model: any = {};
-  constructor(private router: Router) { }
+  private signupForm: FormGroup;
+  constructor(private router: Router, private fb: FormBuilder, private http: HttpClient) {
+    this.signupForm = this.fb.group({
+      password: ['', Validators.required],
+      passwordValid: ['', Validators.required],
+      email: ['', Validators.required],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      birthDate: ['', Validators.required],
+      driverLicence: ['', Validators.required],
+      adress: ['', Validators.required],
+      country: ['', Validators.required],
+      phone: ['', Validators.required],
+    });
+  }
 
-  signup(){
-    this.http.post(`http://api.atcreative.fr/api/car/${this.id}`)
+  signup() {
+    const data = this.signupForm.value;
+    const datas = JSON.stringify({ firstname: data.firstname, lastname: data.lastname, email: data.email, birthDate: data.birthDate, adress: data.adress, country: data.country, phone: data.phone, driverLicence: data.driverLicence,  password: data.password});
+    console.log(datas);
+    this.http.post(`http://api.atcreative.fr/api/new/user`, datas).subscribe((res: Response) => console.log(res));
   }
   ngOnInit() {
     this.router.events.subscribe((evt) => {

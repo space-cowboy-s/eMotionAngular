@@ -1,46 +1,50 @@
 <div class="container">
   <div class="col-md-6 col-md-offset-3">
     <hr>
-    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate id="form_signin">
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+    <form name="form" (ngSubmit)="signup()" [formGroup]="signupForm" novalidate id="form_signin">
+      <div class="form-group">
         <label for="email">Identifiant</label>
-        <input type="mail" class="form-control" name="email" id="email" [(ngModel)]="model.email" #email="ngModel" placeholder='Saisissez votre adresse mail' required />
+        <input type="mail" class="form-control" formControlName="email" id="email"  placeholder='Saisissez votre adresse mail' required />
       </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+      <div class="form-group">
         <label for="password">Mot de passe</label>
-        <input type="password" class="form-control" name="password" id="password" [(ngModel)]="model.password" #password="ngModel" placeholder='Saisissez votre mot de passe' required />
+        <input type="password" class="form-control" formControlName="password" id="password"  placeholder='Saisissez votre mot de passe' required />
       </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !passwordValid.valid}">
+      <div class="form-group"  >
         <label for="passwordValid">Vérification du mot de passe</label>
-        <input type="password" class="form-control" name="passwordValid" id="passwordValid" [(ngModel)]="model.passwordValid" #passwordValid="ngModel" placeholder="Saisissez à nouveau votre mot de passe" required />
+        <input type="password" class="form-control" formControlName="passwordValid" id="passwordValid"  placeholder="Saisissez à nouveau votre mot de passe" required />
       </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastname.valid}">
+      <div class="form-group"  >
         <label for="lastname">Nom</label>
-        <input type="text" class="form-control" name="lastname" id="lastname" [(ngModel)]="model.lastname" #lastname="ngModel" placeholder="Nom" required />
+        <input type="text" class="form-control" formControlName="lastname" id="lastname" placeholder="Nom" required />
       </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !firstname.valid}">
+      <div class="form-group"  >
         <label for="firstname">Prénom</label>
-        <input type="text" class="form-control" name="firstname" id="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" placeholder="Prénom" required />
+        <input type="text" class="form-control" formControlName="firstname" id="firstname"  placeholder="Prénom" required />
       </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !birthdate.valid}">
+      <div class="form-group">
         <label for="birthdate">Date de naissance</label>
-        <input type="date" class="form-control datepicker" name="birthdate" id="birthdate" [(ngModel)]="model.birthdate" #birthdate="ngModel" required />
+        <input type="date" class="form-control datepicker" formControlName="birthDate" id="birthdate" required />
       </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !Country.valid}">
+      <div class="form-group">
         <label for="Country">Pays</label>
-        <input type="text" class="form-control" name="Country" id="Country" [(ngModel)]="model.Country" #Country="ngModel" placeholder="Pays"/>
+        <input type="text" class="form-control" formControlName="country" id="Country" placeholder="Pays"/>
       </div>
-      <div class="form-group" [ngClass]="{'has-error': f.submitted && !phone.valid}">
+      <div class="form-group">
+        <label for="adress">Adresse</label>
+        <input type="text" class="form-control" formControlName="adress" id="adress" placeholder="Adresse"/>
+      </div>
+      <div class="form-group">
         <label for="phone">Téléphone</label>
-        <input type="text" class="form-control" name="phone" id="phone" [(ngModel)]="model.phone" #phone="ngModel" placeholder="Téléphone"/>
+        <input type="text" class="form-control" formControlName="phone" id="phone"  placeholder="Téléphone"/>
       </div>
-      <div class="form-group" [ngClass]="{'has-error': f.submitted && !driverLicence.valid}">
+      <div class="form-group">
         <label for="driverLicence">Numéro de permis de conduire</label>
-        <input type="text" class="form-control" name="driverLicence" id="driverLicence" [(ngModel)]="model.driverLicence" #driverLicence="ngModel" placeholder="Numéro de permis de conduire"/>
+        <input type="text" class="form-control" formControlName="driverLicence" id="driverLicence" placeholder="Numéro de permis de conduire"/>
       </div>
       <div class="form-group">
         <a class="btn" [routerLink]="['/signin']">J'ai déjà un compte</a>
-        <button class="btn btn-primary pull-right" [disabled]="!f.form.valid">Connexion</button>
+        <button class="btn btn-primary pull-right">Valider</button>
       </div>
     </form>
     <hr>

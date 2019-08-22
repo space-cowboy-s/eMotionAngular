@@ -35,7 +35,7 @@ export class EdituserComponent implements OnInit {
     const url =  `http://api.atcreative.fr/api/admin/users/profile/${this.id}`;
     const data = this.Editusers.value;
     const datas = JSON.stringify({ firstname: data.firstname, lastname: data.lastname,
-      email: data.email, apiKey: data.apiKey, birthDate: data.birthDate, adress: data.adress, country: data.country})
+      email: data.email, apiKey: data.apiKey, birthDate: data.birthDate, adress: data.adress, country: data.country});
     console.log(datas);
     this.httpClient.patch(url, datas , {headers: headers}).subscribe((res: Response) => console.log(res));
   }
