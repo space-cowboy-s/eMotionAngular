@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
-
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+const headers=  new HttpHeaders({
+  'Content-Type': 'application/json'
+});
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -30,7 +32,7 @@ export class SignupComponent implements OnInit {
     const data = this.signupForm.value;
     const datas = JSON.stringify({ firstname: data.firstname, lastname: data.lastname, email: data.email, birthDate: data.birthDate, adress: data.adress, country: data.country, phone: data.phone, driverLicence: data.driverLicence,  password: data.password});
     console.log(datas);
-    this.http.post(`http://api.atcreative.fr/api/new/user`, datas).subscribe((res: Response) => console.log(res));
+    this.http.post(`http://api.atcreative.fr/api/new/user`, datas, {headers: headers}).subscribe((res: Response) => console.log(res));
   }
   ngOnInit() {
     this.router.events.subscribe((evt) => {
