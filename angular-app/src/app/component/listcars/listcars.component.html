@@ -1,8 +1,9 @@
 <div class="container">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Marque" style="width: 100px" [(ngModel)]="searchBrand"/>
-    <input type="text" class="form-control" placeholder="Modèle" style="width: 100px" [(ngModel)]="searchModel"/>
-    <input type="text" class="form-control" placeholder="Couleur" style="width: 100px" [(ngModel)]="searchColor"/>
+  <hr class="col-md-8 col-md-offset-2">
+  <div class="col-md-offset-2 col-md-8">
+    <input type="text" placeholder="Marque" style="width: 100px" [(ngModel)]="searchBrand"/>
+    <input type="text" placeholder="Modèle" style="width: 100px" [(ngModel)]="searchModel"/>
+    <input type="text" placeholder="Couleur" style="width: 100px" [(ngModel)]="searchColor"/>
   </div>
   <div *ngFor="let car of cars | carFilter:searchBrand:searchModel:searchColor">
     <hr class="col-md-8 col-md-offset-2">
@@ -16,7 +17,7 @@
       </div>
       <div class="col-md-4">
         <img src="/assets/car_default.jpg"/>
-        <a class="btn" [routerLink]="['/contrat/', car.id]">Réserver</a>
+        <a class="btn" [routerLink]="['/contrat', car.id]">Réserver</a>
       </div>
     </div>
   </div>

@@ -16,6 +16,7 @@ export class ListcarsComponent implements OnInit {
 
   ngOnInit() {
     this.http.get(`http://api.atcreative.fr/api/cars`).subscribe((res: Response) => this.cars = res);
+    console.log(this.http.get(`http://api.atcreative.fr/api/cars`).subscribe((res: Response) => console.log(this.cars = res)));
   }
 
 }

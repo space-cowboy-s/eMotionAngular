@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, FormBuilder, ReactiveFormsModule} from '@angular/forms';
-import { ContratComponent } from './contrat.component';
+
 
 @NgModule({
-  declarations: [
-    ContratComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     FormsModule,

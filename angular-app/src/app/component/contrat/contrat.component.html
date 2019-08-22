@@ -1,27 +1,32 @@
 <div class="container">
-    <form (ngSubmit)="startSearch()" [formGroup]="searchForm">
-        <div class="form-group">
-        <label>Champ</label>
-        <!--se réfèrer au .component.ts pour les formControlName
-         et le ngSubmit / formGroup  -->
-        <input formControlName="input1" type="text" class="form-control" id="" aria-describedby="" placeholder="">
-        </div>
-        <div class="form-group">
-        <label for="">Champ</label>
-        <input formControlName="input2" type="text" class="form-control" id="" placeholder="">
-        </div>
-        <div class="form-group">
-        <label for="">Champ</label>
-        <input formControlName="input3" type="text" class="form-control" id="" placeholder="">
-        </div>
-        <div class="form-group">
-        <label for="">Champ</label>
-        <input formControlName="input4" type="text" class="form-control" id="" placeholder="">
-        </div> 
-        <div class="form-group">
-        <label for="">Champ</label>
-        <input formControlName="input5" type="text" class="form-control" id="" placeholder="">
-        </div>    
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+  <hr class="col-md-8 col-md-offset-2">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-2">
+      <strong>{{car.brand}} {{car.model}}</strong>
+      <p>{{car.color}}</p>
+      <p><i class="fa fa-tachometer"></i> Kilométrage : {{car.numberKilometers}} km</p>
+      <p>Date d'achat : {{car.purchaseDate}}</p>
+      <p>Prix : {{car.bail}} € / jour</p>
     </div>
+    <div class="col-md-4">
+      <img src="/assets/car_default.jpg"/>
+    </div>
+  </div>
+  <hr class="col-md-offset-2 col-md-8">
+  <form (ngSubmit)="reserveCar(car.bail)" [formGroup]="reserveForm" class="col-md-8 col-md-offset-2">
+    <input type="hidden" formControlName="priceTTC" value="{{TTprice}}" />
+    <div class="form-group col-md-5">
+      <label>Date de début de réservation : </label>
+      <input formControlName="start" type="date" required (change)="setNewPrice(car.bail); afficheReduction()">
+    </div>
+    <div class="form-group col-md-5 col-md-offset-2">
+      <label>Date de fin de réservation : </label>
+      <input formControlName="end" type="date" required (change)="setNewPrice(car.bail); afficheReduction()">
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-4 price">Prix : {{TTprice}} € TTC</div>
+      <div class="col-md-4 col-md-offset-2 price ">{{reducValue}}</div>
+    </div>
+    <button type="submit" class="btn btn-primary" >Valider</button>
+  </form>
+</div>

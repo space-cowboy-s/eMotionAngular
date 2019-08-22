@@ -28,32 +28,36 @@ import {EditcarsComponent} from './component/editcars/editcars.component';
 import { SigninComponent } from './component/signin/signin.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ListcarsPipe} from './component/listcars/listcars.pipe';
+import {ListusersPipe} from './component/listuser/listuser.pipe';
+import { AdminuserComponent } from './component/adminuser/adminuser.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-HomepageComponent,
-NavbarComponent,
-FooterComponent,
-AddcarComponent,
-ConditionComponent,
-ListcarsComponent,
-ListuserComponent,
-ListcommandComponent,
-FactureComponent,
-HistoricComponent,
-CarsdispoComponent,
-InfouserComponent,
-ProfiluserComponent,
-ContratComponent,
-LegalComponent,
-RgpdComponent,
-SignupComponent,
-ContactComponent,
-AdmincarsComponent,
-EditcarsComponent,
-SigninComponent,
-    ListcarsPipe
+    HomepageComponent,
+    NavbarComponent,
+    FooterComponent,
+    AddcarComponent,
+    ConditionComponent,
+    ListcarsComponent,
+    ListuserComponent,
+    ListcommandComponent,
+    FactureComponent,
+    HistoricComponent,
+    CarsdispoComponent,
+    InfouserComponent,
+    ProfiluserComponent,
+    ContratComponent,
+    LegalComponent,
+    RgpdComponent,
+    SignupComponent,
+    ContactComponent,
+    AdmincarsComponent,
+    EditcarsComponent,
+    SigninComponent,
+    ListcarsPipe,
+    ListusersPipe,
+    AdminuserComponent
   ],
   imports: [
     BrowserModule,
