@@ -1,0 +1,39 @@
+<div class="container">
+    <hr class="col-md-8 col-md-offset-2">
+    <div class="col-md-offset-2 col-md-8">
+      <input type="text" placeholder="Marque" style="width: 100px" [(ngModel)]="searchBrand"/>
+      <input type="text" placeholder="Modèle" style="width: 100px" [(ngModel)]="searchModel"/>
+      <input type="text" placeholder="Couleur" style="width: 100px" [(ngModel)]="searchColor"/>
+    </div>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <td>Marque</td>
+          <td>Modele</td>
+          <td>Prix à la journée</td>
+          <td>Localisation</td>
+          <td>Disponible</td>
+          <td>Modifier</td>
+          <td>Supprimer</td>
+        </tr>
+      </thead>
+      <tbody *ngFor="let car of cars | carFilter:searchBrand:searchModel:searchColor">
+        <tr>
+          <td>{{car.brand}}</td>
+          <td>{{car.model}}</td>
+          <td>{{car.purchaseDate}}</td>
+          <td>{{car.location}}</td>
+          <td (click)="setAvailableValue(car.availability, car.id)">
+            <ng-template [ngIf]="car.availability" [ngIfElse]="other">
+              <i class="fa fa-eye" style="color:green"></i>
+            </ng-template>
+            <ng-template #other>
+              <i class="fa fa-eye-slash" style="color:red"></i>
+            </ng-template>
+          </td>
+          <td [routerLink]="['/editcar', car.id]"><i class="fa fa-pencil"></i></td>
+          <td><i class="fa fa-trash-o" (click)="deleteCar(car.id)"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

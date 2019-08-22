@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
  const headers=  new HttpHeaders({
-   'Content-Type': 'appliation/json',
+   'Content-Type': 'application/json',
    'x-auth-token': '72312'
   });
 @Component({
@@ -15,11 +15,11 @@ export class ListuserComponent implements OnInit {
   private searchFirstname: string;
   private searchEmail: string;
   private searchApikey: string;
-  
+
   constructor(public httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.httpClient.get(`http://api.atcreative.fr/api/admin/users`, {headers}).subscribe((res: Response) => this.users = res);
+    this.httpClient.get(`http://api.atcreative.fr/api/admin/users`, {headers}).subscribe((res: Response) => console.log(this.users = res));
   }
 
 }

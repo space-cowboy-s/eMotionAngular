@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-const headers =  new HttpHeaders({
-  'Content-Type': 'appliation/json',
+import {Router} from "@angular/router";
+const headers=  new HttpHeaders({
+  'Content-Type': 'application/json',
   'x-auth-token': '72312'
 });
 const getCircularReplacer = () => {
   const seen = new WeakSet();
   return (key, value) => {
-    if (typeof value === 'object' && value !== null) {
+    if (typeof value === "object" && value !== null) {
       if (seen.has(value)) {
         return;
       }
@@ -24,9 +25,7 @@ const getCircularReplacer = () => {
 })
 export class AddcarComponent implements OnInit {
   public AddCars: FormGroup;
-  constructor(public fb: FormBuilder, public httpClient: HttpClient ) {
-  }
-  ngOnInit() {
+  constructor(public route: Router, public fb: FormBuilder, public httpClient: HttpClient ) {
     this.AddCars = this.fb.group({
       brand: ['', Validators.required], // la chaîne de caractères est la valeur par défaut du champ
       model: ['', Validators.required],
@@ -37,11 +36,20 @@ export class AddcarComponent implements OnInit {
       purchase_date: ['', Validators.required],
       buying_price: ['', Validators.required],
       bail: ['', Validators.required],
+      location: ['', Validators.required]
     });
   }
+  ngOnInit() {
+
+  }
   AddCar(){
-    const url = 'http://api.atcreative.fr/api/admin/car/add';
-    console.log(headers)
-    this.httpClient.post(url,JSON.stringify(this.AddCars, getCircularReplacer()), {headers: headers}).subscribe((res: Response) => console.log(res));
+    const url = `http://api.atcreative.fr/api/admin/car/add`;
+    const data = this.AddCars.value;
+    const datas = JSON.stringify({ brand: data.brand, model: data.model, serialNumber: data.serial_number, color: data.color, numberplate: data.numberplate, numberKilometers: data.number_kilometers, purchaseDate: data.purchase_date, buyingPrice: data.buying_price, location: data.location, availability: true, bail: data.bail})
+    console.log(datas);
+    this.httpClient.post(url, datas , {headers: headers}).subscribe((res: Response) => {
+      console.log(res);
+      this.route.navigate(['/admincars']);
+    });
   }
 }

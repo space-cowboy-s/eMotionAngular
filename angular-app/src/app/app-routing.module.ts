@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AddcarComponent } from './component/addcar/addcar.component';
-import { AdmincarsComponent } from './component/admincars/admincars.component';
+import { AdmincarComponent } from './component/admincar/admincar.component';
 import { CarsdispoComponent } from './component/carsdispo/carsdispo.component';
 import { ConditionComponent } from './component/condition/condition.component';
 import { ContratComponent } from './component/contrat/contrat.component';
@@ -18,16 +18,18 @@ import { SignupComponent } from './component/signup/signup.component';
 import { LegalComponent } from './component/legal/legal.component';
 import { RgpdComponent } from './component/rgpd/rgpd.component';
 import { EditcarsComponent } from './component/editcars/editcars.component';
-import {SigninComponent} from "./component/signin/signin.component";
+import {SigninComponent} from './component/signin/signin.component';
+import {EdituserComponent} from './component/edituser/edituser.component';
+import {AdmincommandeComponent} from "./component/admincommande/admincommande.component";
 
 const routes: Routes = [
   {path: '' , component: HomepageComponent},
   {path: 'addcar', component: AddcarComponent},
-  {path: 'admincars', component: AdmincarsComponent},
+  {path: 'admincars', component: AdmincarComponent},
   {path: 'carsdispo', component: CarsdispoComponent},
   {path: 'condition', component: ConditionComponent},
   {path: 'contrat/:id', component: ContratComponent},
-  {path: 'editcars', component: EditcarsComponent},
+  {path: 'editcar/:id', component: EditcarsComponent},
   {path: 'facture', component: FactureComponent},
   {path: 'historic', component: HistoricComponent},
   {path: 'infouser', component: InfouserComponent},
@@ -39,7 +41,9 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'legal', component: LegalComponent},
-  {path: 'rgpd', component: RgpdComponent}
+  {path: 'rgpd', component: RgpdComponent},
+  {path: 'edituser/:id', component: EdituserComponent},
+  {path: 'admincommande', component: AdmincommandeComponent}
 ];
 
 @NgModule({

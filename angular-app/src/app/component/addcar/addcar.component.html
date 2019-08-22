@@ -1,42 +1,48 @@
-
 <div class="container">
-    <form (ngSubmit)="AddCar()" [formGroup]="AddCars">
-        <div class="form-group">
-        <label>Marque</label>
-        <!--se réfèrer au .component.ts pour les formControlName
-         et le ngSubmit / formGroup  -->
-        <input formControlName="brand" type="text" class="form-control" id="" placeholder="Marque">
-        </div>
-        <div class="form-group">
-        <label>Modèle</label>
-        <input formControlName="model" type="text" class="form-control" id="" placeholder="Modèle">
-        </div>
-        <div class="form-group">
-        <label>Numéro de série</label>
-        <input formControlName="serial_number" type="text" class="form-control" id="" placeholder="Numéro de série">
-        </div>
-        <div class="form-group">
-        <label>Couleur</label>
-        <input formControlName="color" type="text" class="form-control" id="" placeholder="Couleur">
-        </div>
-        <div class="form-group">
-            <label>Immatriculation</label>
-            <input formControlName="numberplate" type="text" class="form-control" id="" placeholder="Numéro de série">
-            </div> 
-        <div class="form-group">
-        <label>Kilomètres</label>
-        <input formControlName="number_kilometers" type="number" class="form-control" id="" placeholder="Kilomètres">
-        </div>
-
-        <div class="form-group">
-        <label>Prix d'achat</label>
-        <input formControlName="buying_price" type="number" class="form-control" id="" placeholder="Prix d'achat">
-        </div>
-        <div class="form-group">
-        <label>Prix de location</label>
-        <input formControlName="bail" type="number" class="form-control" id="" placeholder="Prix de location">
-        </div>    
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    {{AddCars.value | json}}
+  <form (ngSubmit)="AddCar()" [formGroup]="AddCars">
+    <div class="form-group">
+      <label>Marque</label>
+      <!--se réfèrer au .component.ts pour les formControlName
+       et le ngSubmit / formGroup  -->
+      <input formControlName="brand" type="text" class="form-control" id="" placeholder="Marque">
     </div>
+    <div class="form-group">
+      <label>Modèle</label>
+      <input formControlName="model" type="text" class="form-control" id="" placeholder="Modèle">
+    </div>
+    <div class="form-group">
+      <label>Numéro de série</label>
+      <input formControlName="serial_number" type="text" class="form-control" id="" placeholder="Numéro de série">
+    </div>
+    <div class="form-group">
+      <label>Couleur</label>
+      <input formControlName="color" type="text" class="form-control" id="" placeholder="Couleur">
+    </div>
+    <div class="form-group">
+      <label>Immatriculation</label>
+      <input formControlName="numberplate" type="text" class="form-control" id="" placeholder="Numéro de série">
+    </div>
+    <div class="form-group">
+      <label>Kilomètres</label>
+      <input formControlName="number_kilometers" type="number" class="form-control" id="" placeholder="Kilomètres">
+    </div>
+    <div class="form-group">
+      <label>Date d'achat</label>
+      <input formControlName="purchase_date" type="date" class="form-control" id="" placeholder="Date d'achat">
+    </div>
+    <div class="form-group">
+      <label>Prix d'achat</label>
+      <input formControlName="buying_price" type="number" class="form-control" id="" placeholder="Prix d'achat">
+    </div>
+    <div class="form-group">
+      <label>Prix de location</label>
+      <input formControlName="bail" type="number" class="form-control" id="" placeholder="Prix de location">
+    </div>
+    <div class="form-group">
+      <label>localisation</label>
+      <input formControlName="location" type="text" class="form-control" id="" placeholder="Paris ou Lyon">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  {{AddCars.value | json}}
+</div>

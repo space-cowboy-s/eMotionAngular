@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {FormBuilder, FormGroup} from '@angular/forms';
 
-const headers=  new HttpHeaders({
-  'Content-Type': 'appliation/json',
+const headers =  new HttpHeaders({
+  'Content-Type': 'application/json',
   'x-auth-token': '93324'
 });
 @Component({
@@ -18,7 +18,7 @@ export class ContratComponent implements OnInit {
   private reducValue;
   private id: string;
   private reserveForm: FormGroup;
-  constructor( private route: ActivatedRoute, private http: HttpClient, private fb: FormBuilder ) {
+  constructor( private route: ActivatedRoute, private routeRedirect: Router, private http: HttpClient, private fb: FormBuilder ) {
     this.reserveForm = fb.group({
       start: '',
       end: '',
@@ -61,13 +61,18 @@ export class ContratComponent implements OnInit {
   }
   reserveCar(price) {
     const Total = this.setNewPrice(price)
-    const data = JSON.stringify({ car: {id: 11}, startBooking: this.reserveForm.value.start, endBooking: this.reserveForm.value.end, totalPriceHT: 99})
+    const data = JSON.stringify({ car: {id: this.id}, startBooking: this.reserveForm.value.start, endBooking: this.reserveForm.value.end, totalPriceHT: Total})
     console.log(data, headers);
     this.http.post(`http://api.atcreative.fr/api/user/bookings/add`, data, {headers: headers}).subscribe((res: Response) => console.log(res));
   }
+
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.http.get(`http://api.atcreative.fr/api/car/${this.id}`).subscribe((res: Response) => this.car = res);
+    this.http.get(`http://api.atcreative.fr/api/car/${this.id}`).subscribe((res: Response) => {
+      this.car = res; if (!this.car.availability) {
+        this.routeRedirect.navigate(['/listcars']);
+      }
+    });
   }
 
 }

@@ -30,6 +30,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {ListcarsPipe} from './component/listcars/listcars.pipe';
 import {ListusersPipe} from './component/listuser/listuser.pipe';
 import { AdminuserComponent } from './component/adminuser/adminuser.component';
+import { AdmincarComponent } from './component/admincar/admincar.component';
+import { AdmincarPipe } from './component/admincar/admincar.pipe';
+import {EdituserComponent} from "./component/edituser/edituser.component";
+import { AdmincommandeComponent } from './component/admincommande/admincommande.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +61,11 @@ import { AdminuserComponent } from './component/adminuser/adminuser.component';
     SigninComponent,
     ListcarsPipe,
     ListusersPipe,
-    AdminuserComponent
+    AdminuserComponent,
+    AdmincarComponent,
+    AdmincarPipe,
+    EdituserComponent,
+    AdmincommandeComponent
   ],
   imports: [
     BrowserModule,
