@@ -28,7 +28,7 @@ export class AdmincarComponent implements OnInit {
     this.http.patch(`http://api.atcreative.fr/api/admin/car/${id}`, JSON.stringify({availability: !value}), {headers}).subscribe((res: Response) => {
       console.log(res);
       // tslint:disable-next-line:no-shadowed-variable
-      this.http.get(`http://api.atcreative.fr/api/cars`).subscribe((res: Response) => console.log(this.cars = res));
+      this.http.get(`http://api.atcreative.fr/api/cars`).subscribe((res: Response) => this.cars = res);
     });
   }
   ngOnInit() {

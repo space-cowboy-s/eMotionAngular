@@ -10,6 +10,9 @@ export class SignupComponent implements OnInit {
   model: any = {};
   constructor(private router: Router) { }
 
+  signup(){
+    this.http.post(`http://api.atcreative.fr/api/car/${this.id}`)
+  }
   ngOnInit() {
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {

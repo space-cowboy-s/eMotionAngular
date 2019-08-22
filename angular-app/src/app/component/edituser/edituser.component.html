@@ -1,28 +1,27 @@
 <div *ngIf="Editusers" class="container">
-        <form  (ngSubmit)="Updateusers()" [formGroup]="Editusers">
-            <div class="form-group">
-                <label>Marque</label>
-                <!--se réfèrer au .component.ts pour les formControlName
-                 et le ngSubmit / formGroup  -->
-                <input formControlName="firstname" type="text" class="form-control" value="{{this.user.firstname}}">
-                </div>
-                <div class="form-group">
-                <label>Modèle</label>
-                <input formControlName="lastname" type="text" class="form-control" id="" value="{{this.user.lastname}}">
-                </div>
-                <div class="form-group">
-                <label>Couleur</label>
-                <input formControlName="birthDate" type="text" class="form-control" id="" value="{{user.birth_date}}">
-                </div>
-                <div class="form-group">
-                    <label>Immatriculation</label>
-                    <input formControlName="adress" type="text" class="form-control" id="" value="{{user.adress}}">
-                    </div> 
-                <div class="form-group">
-                <label>Kilomètres</label>
-                <input formControlName="country" type="text" class="form-control" id="" value="{{user.country}}">
-                </div>     
-                <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        </div>
-        
+  <form  (ngSubmit)="Updateusers()" [formGroup]="Editusers">
+    <div class="form-group">
+      <label>Prénom</label>
+      <!--se réfèrer au .component.ts pour les formControlName
+       et le ngSubmit / formGroup  -->
+      <input formControlName="firstname" type="text" class="form-control" value="{{this.user.firstname}}">
+    </div>
+    <div class="form-group">
+      <label>Nom</label>
+      <input formControlName="lastname" type="text" class="form-control" id="" value="{{this.user.lastname}}">
+    </div>
+    <div class="form-group">
+      <label>Date de naissance</label>
+      <input formControlName="birthDate" type="text" class="form-control" id="" value="{{user.birth_date}}">
+    </div>
+    <div class="form-group">
+      <label>Adresse</label>
+      <input formControlName="adress" type="text" class="form-control" id="" value="{{user.adress}}">
+    </div>
+    <div class="form-group">
+      <label>Pays</label>
+      <input formControlName="country" type="text" class="form-control" id="" value="{{user.country}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -1,40 +1,49 @@
-<div class="container">
-    <form (ngSubmit)="UpdateCars()" [formGroup]="EditCars">
+<div *ngIf="EditCars" class="container">
+    <form  (ngSubmit)="UpdateCars()" [formGroup]="EditCars">
         <div class="form-group">
             <label>Marque</label>
             <!--se réfèrer au .component.ts pour les formControlName
              et le ngSubmit / formGroup  -->
-            <input formControlName="brand" type="text" class="form-control" id="" placeholder="Marque">
+            <input formControlName="brand" type="text" class="form-control" value="{{this.car.brand}}">
             </div>
             <div class="form-group">
             <label>Modèle</label>
-            <input formControlName="model" type="text" class="form-control" id="" placeholder="Modèle">
+            <input formControlName="model" type="text" class="form-control" id="" value="{{this.car.model}}">
             </div>
             <div class="form-group">
             <label>Numéro de série</label>
-            <input formControlName="serial_number" type="text" class="form-control" id="" placeholder="Numéro de série">
+            <input formControlName="serial_number" type="text" class="form-control" id="" value="{{car.serialNumber}}">
             </div>
             <div class="form-group">
             <label>Couleur</label>
-            <input formControlName="color" type="text" class="form-control" id="" placeholder="Couleur">
+            <input formControlName="color" type="text" class="form-control" id="" value="{{car.color}}">
             </div>
             <div class="form-group">
                 <label>Immatriculation</label>
-                <input formControlName="numberplate" type="text" class="form-control" id="" placeholder="Numéro de série">
+                <input formControlName="numberplate" type="text" class="form-control" id="" value="{{car.numberplate}}">
                 </div> 
             <div class="form-group">
             <label>Kilomètres</label>
-            <input formControlName="number_kilometers" type="number" class="form-control" id="" placeholder="Kilomètres">
+            <input formControlName="number_kilometers" type="number" class="form-control" id="" value="{{car.numberKilometers}}">
             </div>
-    
             <div class="form-group">
             <label>Prix d'achat</label>
-            <input formControlName="buying_price" type="number" class="form-control" id="" placeholder="Prix d'achat">
+            <input formControlName="buying_price" type="number" class="form-control" id="" value="{{car.buyingPrice}}">
             </div>
             <div class="form-group">
             <label>Prix de location</label>
-            <input formControlName="bail" type="number" class="form-control" id="" placeholder="Prix de location">
-            </div>    
+            <input formControlName="bail" type="number" class="form-control" id="" value="{{car.bail}}">
+            </div>
+            <div class="form-group">
+                    <label>Disponibilité</label>
+                <ng-template [ngIf]="car.availability" [ngIfElse]="False">
+                <input formControlName="availability" type="checkbox" class="form-control" checked></ng-template>   
+                <ng-template #False><input formControlName="availability" type="checkbox" class="form-control"></ng-template>
+            </div>
+                <div class="form-group">
+                    <label>Localisation</label>
+                    <input formControlName="location" type="text" class="form-control" id="" value="{{car.location}}">
+                    </div>         
             <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     </div>
