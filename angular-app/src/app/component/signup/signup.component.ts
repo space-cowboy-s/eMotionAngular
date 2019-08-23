@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
     const data = this.signupForm.value;
     const datas = JSON.stringify({ firstname: data.firstname, lastname: data.lastname, email: data.email, birthDate: data.birthDate, adress: data.adress, country: data.country, phone: data.phone, driverLicence: data.driverLicence,  password: data.password});
     console.log(datas);
-    this.http.post(`http://api.atcreative.fr/api/new/user`, datas, {headers: headers}).subscribe((res: Response) => {console.log(res); this.route.navigate('/valid')});
+    this.http.post(`http://api.atcreative.fr/api/new/user`, datas, {headers: headers}).subscribe((res: Response) => {console.log(res);});
   }
   ngOnInit() {
     this.router.events.subscribe((evt) => {

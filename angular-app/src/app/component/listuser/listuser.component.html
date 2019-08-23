@@ -14,7 +14,7 @@
       <td>Pays</td>
     </thead>
     <tbody *ngFor="let user of users | userFilter:searchFirstname:searchLastname:searchEmail:searchApikey">
-      <tr *ngIf="user.roles == 'ROLE_USER'">
+      <tr *ngIf="user.roles == 'ROLE_USER' || user.roles == 'ROLE_PROPRIETAIRE'">
         <td><strong>{{user.firstname}} {{user.lastname}}</strong></td>
         <td>{{user.email}}</td>
         <td>{{user.birthDate}}</td>
